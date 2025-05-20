@@ -1,0 +1,7 @@
+google-generativeai
+psycopg2-binary
+google-cloud-aiplatform
+beautifulsoup4
+flask
+email-reply-parser
+json-repair
