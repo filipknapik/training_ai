@@ -1,128 +1,165 @@
 This is a quick workshop showcasing how to play with AI in Google Cloud Platform.
 
-SESSION 1 - basics
+## SESSION 1: Setup and First Exercise
 
-1. Prepare a new GCP project
-Pick a project to play in. If you don't have one, get an experimental one. 
-An empty and fresh project would be ideal
+### Installation Steps
 
-2. Create a local folder in your laptop
-create 'aiworkshop' folder in your Documents
+1.  **Download and install VS Code**
+    On your corporate laptop, install VS Code client.
+    Follow instructions from https://g3doc.corp.google.com/devtools/editors/vscode/g3doc/install.md?cl=head#macos
+    (For MacOS you have a direct link; for Windows you need to go to https://code.visualstudio.com/)
 
+2.  **Add Gemini Code Assist plugin to VS Code**
+    You will find it in the VS Code Marketplace (usually on the left sidebar).
 
-3. gcloud init
-Let's also authorize gcloud to access your project. Run:
-gcloud init
+3.  **Create a local folder**
+    Create an `aiworkshop` folder in your `Documents` directory (or any preferred location).
 
-Reinitialize with the project from #1 project, choose your corporate account, enter a project ID where you would play. 
-Skip setting up a zone.
+4.  **Check Python version**
+    Go to your Terminal and check your `python3` version. Version 3.11 or newer is needed.
+    You can use either of the following commands:
+    ```sh
+    python3 --version
+    ```
+    ```sh
+    python --version
+    ```
 
+5.  **Create a virtual environment**
+    While in the terminal window, navigate into the `aiworkshop` folder, then create and activate a virtual environment:
 
-4. Set default project for quota checks and billing
-gcloud auth application-default set-quota-project [yourproject]
+    **Mac/Linux:**
+    ```sh
+    python3 -m venv venv
+    source venv/bin/activate
+    ```
 
-5. Authenticate to your project for gcloud
-Also, authenticate using this command:
-gcloud auth application-default login
+    **Windows:**
+    ```sh
+    python -m venv venv
+    venv\Scripts\activate
+    ```
 
-6. Download and install VS code
-On your corporate laptop, install VS Code client.
+6.  **Install Python dependencies**
+    With your virtual environment activated, install the required Python packages from `requirements.txt`:
+    ```sh
+    pip install -r requirements.txt
+    ```
 
-Follow instructions from https://g3doc.corp.google.com/devtools/editors/vscode/g3doc/install.md?cl=head#macos
-(for MacOS you have a direct link; for Windows you need to go to https://code.visualstudio.com/)
+7.  **Open 'aiworkshop' folder in VS Code**
+    In VS Code, use the "Open Folder" option to open the `aiworkshop` directory. Do not open individual files. Leave VS Code open.
 
-7. Add Gemini Code Assist plugin to VS code from the marketplace
-You will find it in the marketplace on the left of the window.
+8.  **Prepare a new GCP project**
+    Pick a Google Cloud Platform project to use for this workshop. If you don't have one, get an experimental one. An empty, fresh project is ideal. Note down your Project ID.
 
-8. In VS Code, open 'aiworkshop' folder (using Open Folder option, not individual files)
-Leave the VS Code open. 
+9.  **Enable Gemini API in Cloud Console**
+    Go to the Google Cloud Console, select the correct GCP project, search for "Gemini API" in the search bar, and ensure it's **Enabled**.
 
-9. Check python version
-Go back to the Terminal and check your python3 version:
+10. **Create a Vertex AI API Key**
+    In the Cloud Console, search for "Credentials". Click on "Create Credentials" and select "API Key".
+    Once the key is created, **edit the API key** to restrict its usage. Under "API restrictions", select "Restrict key" and choose "Generative Language API" from the dropdown. Save the changes.
+    Go back to your VS Code window and edit the `envvars.sh` file in your `aiworkshop` folder. Place the API key you just created into this file (e.g., `export API_KEY="YOUR_API_KEY_HERE"`) and save it.
+    **Remember to never share this file or your API key with anyone!**
 
-python3 --version
-or
-python --version
+---
+*Installation complete*
 
-Version 3.11 or newer is needed.
+### Running Your First Exercise
 
-10. Create a virtual envrionment
-While in the terminal window, in the 'aiworkshop', create a virtual environment:
+1.  **Load the API key into your terminal session**
+    In your terminal, within the `aiworkshop` folder (and with the virtual environment activated), run:
+    ```sh
+    source envvars.sh
+    ```
 
-Mac:
-python3 -m venv venv
-source venv/bin/activate
+2.  **Initialize `gcloud`**
+    Authorize `gcloud` to access your project. Run:
+    ```sh
+    gcloud init
+    ```
+    Reinitialize with the GCP project ID you selected in Installation Step 8. Choose your corporate account when prompted. You can skip setting up a default Compute Engine zone if asked.
 
-Windows:
-python -m venv venv
-venv\Scripts\activate
+3.  **Set default project for quota and billing**
+    Set your project for application default credentials, which is used for quota checks and billing by some client libraries:
+    ```sh
+    gcloud auth application-default set-quota-project YOUR_PROJECT_ID
+    ```
+    Replace `YOUR_PROJECT_ID` with your actual GCP Project ID.
 
-11. Enable Gemini API in Cloud Console
-Go to the Cloud Console in the right GCP project, search for Gemini API and ensure it's Enabled.
+4.  **Authenticate `gcloud` for application default credentials**
+    Authenticate using this command:
+    ```sh
+    gcloud auth application-default login
+    ```
 
-12. Create a Vertex AI credential
+5.  **Run the first exercise**
+    Execute the first Python script:
+    ```sh
+    python exercise1.py
+    ```
 
-Go to Cloud Console and type in Credentials in Cloud Console. Click on Create Credentials, and create API Key. Then, Edit this key and use Restrict Key and narrow it down only to Generative Language API.
+## SESSION 2: Advanced Development Kit (ADK)
 
-Go back to your 
+1.  **Install the Advanced Development Kit (ADK)**
+    To use the ADK, you'll need to add it to your Python dependencies.
 
-13. Install python dependencies
-Back to the terminal. Let's install Python dependencies:
+    a.  **Update `requirements.txt`:**
+        Open your `requirements.txt` file in the `aiworkshop` folder and add the following line:
+        ```text
+        google-adk
+        ```
+        *(Note: The original workshop material also mentioned an alternative for using a direct Git source, which was commented out. If instructed, you might use this instead:*
+        ```text
+        #git+https://github.com/google/adk-python.git@main
+        ```
+        *Ensure this line is commented out unless you specifically need to use it.)*
 
-pip install -r requirements.txt
+    b.  **Install dependencies:**
+        After saving `requirements.txt`, go to your terminal (with the virtual environment activated) and run:
+        ```sh
+        pip install -r requirements.txt
+        ```
 
-14. Let's run the first exercise!
-python exercise1.py
+## SESSION 3: Infrastructure with Terraform
 
+1.  **Download Terraform**
+    Go to https://developer.hashicorp.com/terraform/install and download the appropriate Terraform binary for your operating system.
+    For macOS, if you cannot use Brew, download the Darwin AMD64 or ARM64 version directly.
+    Once downloaded, unzip it and move the `terraform` executable file into an `infra` subfolder within your `aiworkshop` directory.
 
+2.  **Copy `main.tf` file to the `infra` folder**
+    // TODO: (This step needs the `main.tf` file to be provided or created)
 
-SESSION 2 - Agents
+3.  **Initiate Terraform**
+    Navigate to the `infra` folder in your terminal.
+    Run the init command:
+    -   For **Mac/Linux**:
+        ```sh
+        ./terraform init
+        ```
+    -   For **Windows**:
+        ```sh
+        terraform init
+        ```
+    You might encounter an error message related to executable policies (e.g., Santa on macOS). If so, follow the provided link for resolution steps:
+    `https://upvote.googleplex.com/blockables/a451c0fbbb7cd5004e9aadf9ba6e2f5083a4530da99da1a460ee176ee9308c47`
+    Copy the link to a browser, open it in Upvote, and upvote the policy. You may need to click on "G -> sync santa rules" to expedite the synchronization.
+    Once done, try running `terraform init` (or `./terraform init`) again.
 
+4.  **Create Terraform resources**
+    After successful initialization, apply the Terraform configuration to create your resources:
+    -   For **Mac/Linux**:
+        ```sh
+        ./terraform apply
+        ```
+    -   For **Windows**:
+        ```sh
+        terraform apply
+        ```
 
-SESSION 3
-
-3. Download Terraform
-
-Go to https://developer.hashicorp.com/terraform/install and download the right version.
-In MacOS we can't use Brew, you need to download the right version.
-
-Once downloaded, move the the terraform executable to the infra folder
-
-4. Copy main.tf file to the infra
-
-// TODO
-
-5. Initiate Terraform
-
-Go to infra folder and run:
-./terraform init (on mac)
-terraform init (on Windows)
-
-You will get an error message like this:
-More info:
-https://upvote.googleplex.com/blockables/a451c0fbbb7cd5004e9aadf9ba6e2f5083a4530da99da1a460ee176ee9308c47
-
-Copy the link to a browser and open in upvote, and then upvote. You now need to click on G -> sync santa rules to speed up the sync.
-
-Once done, run terraform init again
-
-
-10. Let's create our resources!
-
-./terraform apply
-
-11.  Establish an SSH tunnel using IAP
-
-
-gcloud compute ssh jumpbox --project=filipstest6 --zone=europe-west3-a -- -L 5433:10.0.2.3:5432
-
-12. install ADK
-google-adk to requirements.txt
-#git+https://github.com/google/adk-python.git@main
-
-13. install adk
-mkdir appbuilder/
-cd appbuilder
-touch .env
-touch agent.py
-touch __init__.py
+5.  **Establish an SSH tunnel using IAP (if applicable)**
+    If your setup involves a jumpbox and requires an SSH tunnel via Identity-Aware Proxy (IAP), use a command similar to this:
+    ```sh
+    gcloud compute ssh jumpbox --project=YOUR_PROJECT_ID --zone=europe-west3-a -- -L 5433:10.0.2.3:5432
+    ```
+    Replace `YOUR_PROJECT_ID`, `jumpbox`, `europe-west3-a`, and the port/IP details with your specific configuration.
