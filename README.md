@@ -4,20 +4,20 @@ This is a quick workshop showcasing how to play with AI in Google Cloud Platform
 
 ### Installation Steps
 
-1.  **Download and install VS Code**
-    On your corporate laptop, install VS Code client.
+1.  **Download and install VS Code**  
+    On your corporate laptop, install VS Code client.  
     Follow instructions from https://g3doc.corp.google.com/devtools/editors/vscode/g3doc/install.md?cl=head#macos
     (For MacOS you have a direct link; for Windows you need to go to https://code.visualstudio.com/)
 
-2.  **Add Gemini Code Assist plugin to VS Code**
-    You will find it in the VS Code Marketplace (usually on the left sidebar).
+2.  **Add Gemini Code Assist plugin to VS Code**  
+    You will find it in the VS Code Marketplace (usually on the left sidebar).  
 
-3.  **Create a local folder**
-    Create an `aiworkshop` folder in your `Documents` directory (or any preferred location).
+3.  **Create a local folder**  
+    Create an `aiworkshop` folder in your `Documents` directory (or any preferred location).  
 
-4.  **Check Python version**
-    Go to your Terminal and check your `python3` version. Version 3.11 or newer is needed.
-    You can use either of the following commands:
+4.  **Check Python version**  
+    Go to your Terminal and check your `python3` version. Version 3.11 or newer is needed.  
+    You can use either of the following commands:  
     ```sh
     python3 --version
     ```
@@ -25,39 +25,39 @@ This is a quick workshop showcasing how to play with AI in Google Cloud Platform
     python --version
     ```
 
-5.  **Create a virtual environment**
-    While in the terminal window, navigate into the `aiworkshop` folder, then create and activate a virtual environment:
+5.  **Create a virtual environment**  
+    While in the terminal window, navigate into the `aiworkshop` folder, then create and activate a virtual environment:  
 
-    **Mac/Linux:**
+    **Mac/Linux:**  
     ```sh
     python3 -m venv venv
     source venv/bin/activate
     ```
 
-    **Windows:**
+    **Windows:**  
     ```sh
     python -m venv venv
     venv\Scripts\activate
     ```
 
-6.  **Install Python dependencies**
-    With your virtual environment activated, install the required Python packages from `requirements.txt`:
+6.  **Install Python dependencies**  
+    With your virtual environment activated, install the required Python packages from `requirements.txt`:  
     ```sh
     pip install -r requirements.txt
     ```
 
-7.  **Open 'aiworkshop' folder in VS Code**
+7.  **Open 'aiworkshop' folder in VS Code**  
     In VS Code, use the "Open Folder" option to open the `aiworkshop` directory. Do not open individual files. Leave VS Code open.
 
-8.  **Prepare a new GCP project**
+8.  **Prepare a new GCP project**  
     Pick a Google Cloud Platform project to use for this workshop. If you don't have one, get an experimental one. An empty, fresh project is ideal. Note down your Project ID.
 
 9.  **Enable Gemini API in Cloud Console**
     Go to the Google Cloud Console, select the correct GCP project, search for "Gemini API" in the search bar, and ensure it's **Enabled**.
 
-10. **Create a Vertex AI API Key**
-    In the Cloud Console, search for "Credentials". Click on "Create Credentials" and select "API Key".
-    Once the key is created, **edit the API key** to restrict its usage. Under "API restrictions", select "Restrict key" and choose "Generative Language API" from the dropdown. Save the changes.
+10. **Create a Vertex AI API Key**  
+    In the Cloud Console, search for "Credentials". Click on "Create Credentials" and select "API Key".  
+    Once the key is created, **edit the API key** to restrict its usage. Under "API restrictions", select "Restrict key" and choose "Generative Language API" from the dropdown. Save the changes.  
     Go back to your VS Code window and edit the `envvars.sh` file in your `aiworkshop` folder. Place the API key you just created into this file (e.g., `export API_KEY="YOUR_API_KEY_HERE"`) and save it.
     **Remember to never share this file or your API key with anyone!**
 
@@ -66,45 +66,57 @@ This is a quick workshop showcasing how to play with AI in Google Cloud Platform
 
 ### Running Your First Exercise
 
-1.  **Load the API key into your terminal session**
-    In your terminal, within the `aiworkshop` folder (and with the virtual environment activated), run:
+1.  **Load the API key into your terminal session**  
+    In your terminal, within the `aiworkshop` folder (and with the virtual environment activated), run:  
     ```sh
     source envvars.sh
     ```
 
-2.  **Initialize `gcloud`**
-    Authorize `gcloud` to access your project. Run:
+2.  **Initialize `gcloud`**  
+    Authorize `gcloud` to access your project. Run:  
     ```sh
     gcloud init
     ```
     Reinitialize with the GCP project ID you selected in Installation Step 8. Choose your corporate account when prompted. You can skip setting up a default Compute Engine zone if asked.
 
-3.  **Set default project for quota and billing**
-    Set your project for application default credentials, which is used for quota checks and billing by some client libraries:
+3.  **Set default project for quota and billing**  
+    Set your project for application default credentials, which is used for quota checks and billing by some client libraries:  
     ```sh
     gcloud auth application-default set-quota-project YOUR_PROJECT_ID
     ```
-    Replace `YOUR_PROJECT_ID` with your actual GCP Project ID.
+    Replace `YOUR_PROJECT_ID` with your actual GCP Project ID.  
 
-4.  **Authenticate `gcloud` for application default credentials**
-    Authenticate using this command:
+4.  **Authenticate `gcloud` for application default credentials**  
+    Authenticate using this command:  
     ```sh
     gcloud auth application-default login
     ```
 
-5.  **Run the first exercise**
-    Execute the first Python script:
+5.  **Run the first exercise - hardcoded question**  
+    The first exercise will run a simple program that answers a question of "the capital of France".
+    Execute the first Python script:  
     ```sh
     python exercise1.py
     ```
 
-## SESSION 2: Advanced Development Kit (ADK)
+    Now, open exercise1.py file and read it carefully. Ensure you understand every part of it, in case of question - ask!
 
-1.  **Install the Advanced Development Kit (ADK)**
-    To use the ADK, you'll need to add it to your Python dependencies.
+6.  **Run the second exercise - our first chat**  
+    The second exercise improves the program a bit and allows it to answer any question provided by a user. ".
+    Execute the first Python script:  
+    ```sh
+    python exercise1.py
+    ```
 
-    a.  **Update `requirements.txt`:**
-        Open your `requirements.txt` file in the `aiworkshop` folder and add the following line:
+    Now, open exercise2.py file and again ensure you understand it.
+
+## SESSION 2: Advanced Development Kit (ADK)  
+
+1.  **Install the Advanced Development Kit (ADK)**  
+    To use the ADK, you'll need to add it to your Python dependencies.  
+
+    a.  **Update `requirements.txt`:**  
+        Open your `requirements.txt` file in the `aiworkshop` folder and add the following line:  
         ```text
         google-adk
         ```
@@ -114,7 +126,7 @@ This is a quick workshop showcasing how to play with AI in Google Cloud Platform
         ```
         *Ensure this line is commented out unless you specifically need to use it.)*
 
-    b.  **Install dependencies:**
+    b.  **Install dependencies:**  
         After saving `requirements.txt`, go to your terminal (with the virtual environment activated) and run:
         ```sh
         pip install -r requirements.txt
