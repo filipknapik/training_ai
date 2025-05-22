@@ -61,6 +61,27 @@ This is a quick workshop showcasing how to play with AI in Google Cloud Platform
     Go back to your VS Code window and edit the `envvars.sh` file in your `aiworkshop` folder. Place the API key you just created into this file (e.g., `export API_KEY="YOUR_API_KEY_HERE"`) and save it.
     **Remember to never share this file or your API key with anyone!**
 
+11. **Install Git**
+    
+    **Mac/Linux:**
+    Refresh libraries:
+    ```sh
+    xcode-select --install
+    cd /
+    mkdir temp
+    cd temp
+    curl -LO https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.49.0.tar.gz
+    tar -xzf git-2.49.0.tar.gz
+    cd git-2.49.0
+    make configure
+    ./configure --prefix=/usr/local --with-openssl=/usr/bin/openssl 
+    make all NO_TCLTK=1
+    sudo make install NO_TCLTK=1
+    git -v
+    ```
+
+    
+
 ---
 *Installation complete*
 
