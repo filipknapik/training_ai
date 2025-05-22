@@ -8,6 +8,10 @@ while True:
     userEntry = input("> ")
     if userEntry.lower() == "exit":
         break
+
+    prompt = f"""Transle text from English to Polish, responding in a JSON object with 'English' and 'Polish' fields containing original and translated text respectively.
+    **English text to translate**: {userEntry}"""
+
     response = model.generate_content(
         userEntry,
         generation_config=genai.types.GenerationConfig(
@@ -15,8 +19,8 @@ while True:
             response_schema={
                 "type": "object",
                 "properties": {
-                    "longitude": {"type": "number"},
-                    "latitude": {"type": "number"}
+                    "English": {"type": "string"},
+                    "Polish": {"type": "string"}
                 }
             }
         ))
