@@ -1,0 +1,184 @@
+TaxMeNothing User Guide
+Version 1.0
+Last Updated: May 22, 2025
+
+Page 1: Welcome to TaxMeNothing!
+1. Introduction
+
+Welcome to TaxMeNothing, your simplified solution for managing invoices and preparing essential data for your tax reporting needs! We understand that keeping track of financial documents can be daunting. TaxMeNothing is designed to streamline the process of capturing invoice details throughout the year, making tax season less stressful. This guide will walk you through the essential features to get you started.
+
+Our Core Philosophy:
+TaxMeNothing focuses on two primary goals:
+
+Effortless Invoice Capture: Quickly and easily record details from your sales and expense invoices.
+Simplified Tax Reporting: Generate clear, concise summaries of your financial data to assist you or your tax professional during tax season.
+System Requirements:
+
+A modern web browser (Google Chrome, Firefox, Safari, Microsoft Edge recommended)
+A stable internet connection
+2. Getting Started
+
+2.1. Creating Your Account
+If you're a new user, you'll need to create an account.
+
+Navigate to www.taxmenothing-app.com (imaginary URL).
+Click on the 'Sign Up' button.
+Enter your email address, create a secure password, and provide your business name (or your name if you're a sole proprietor/freelancer).
+Agree to the Terms of Service and Privacy Policy.
+Click 'Create Account.' You will receive a verification email. Click the link in the email to activate your account.
+2.2. Logging In
+
+Go to www.taxmenothing-app.com.
+Click on the 'Login' button.
+Enter your registered email address and password.
+Click 'Login.'
+2.3. The Dashboard Overview
+Upon logging in, you'll be greeted by the TaxMeNothing Dashboard. This is your central hub.
+
+[Image: TaxMeNothing Dashboard Screenshot Placeholder]
+(Description: A clean interface showing a navigation menu on the left, a summary section in the middle with 'Total Income Recorded,' 'Total Expenses Recorded,' and 'Recent Invoices,' and quick action buttons like 'Add New Invoice' on the top right.)
+The main components of the Dashboard include:
+
+Navigation Menu (Left Pane):
+Dashboard
+Invoices (Income)
+Bills (Expenses)
+Clients
+Vendors
+Reports
+Settings
+Summary View (Center): Quick stats like total income/expenses recorded for the current period, and a list of recently added invoices.
+Quick Actions (Top Right): Buttons for common tasks like 'Add New Invoice' or 'Add New Bill.'
+3. Setting Up Your Profile & Company Details
+
+Before you start adding invoices, it's a good idea to set up your profile and company information.
+
+Click on 'Settings' in the left navigation menu.
+Navigate to the 'Company Profile' tab.
+Fill in your business details:
+Business Name
+Address
+Tax ID Number (e.g., EIN, VAT ID, etc.) - This is crucial for report accuracy.
+Default Currency
+Financial Year Start Date
+Click 'Save Changes.'
+Page 2: Managing Your Financial Data
+4. Managing Invoices (Income)
+
+This section refers to invoices you issue to your clients for products sold or services rendered.
+
+4.1. Adding a New Income Invoice
+
+From the Dashboard, click the 'Add New Invoice' quick action button, OR navigate to 'Invoices (Income)' from the left menu and click '+ New Invoice.'
+Fill in the invoice details:
+Client: Select from existing clients or click '+ Add New Client' (see section 6).
+Invoice Number: Enter your unique invoice number. TaxMeNothing can also auto-generate sequential numbers if configured in Settings.
+Invoice Date: The date the invoice was issued.
+Due Date: The date payment is due.
+Line Items:
+Description: Describe the product or service.
+Quantity: Number of units.
+Unit Price: Price per unit.
+Total: Automatically calculated (Quantity x Unit Price).
+Click '+ Add Line Item' for multiple products/services on the same invoice.
+Subtotal, Tax (if applicable), Total: These will be calculated. You can specify a default tax rate in Settings or manually input per invoice.
+Notes (Optional): Any additional information for the invoice.
+Attachments (Optional): Upload a PDF copy of the original invoice.
+Click 'Save Invoice.'
+4.2. Viewing and Editing Invoices
+
+Navigate to 'Invoices (Income)' from the left menu.
+You'll see a list of all your recorded income invoices. You can search, filter by date range, or sort by columns.
+Click on an invoice number or an 'Edit' icon next to an invoice to open its details.
+Make necessary changes and click 'Save Invoice.'
+4.3. Marking Invoices as Paid
+
+When an invoice is paid, find it in the 'Invoices (Income)' list.
+Click the 'Mark as Paid' action button (often a checkmark or dollar sign icon).
+Enter the payment date and payment method (optional).
+5. Managing Bills (Expenses)
+
+This section refers to bills or invoices you receive from your vendors for goods or services purchased.
+
+5.1. Adding a New Bill (Expense)
+
+Navigate to 'Bills (Expenses)' from the left menu and click '+ New Bill.'
+Fill in the bill details:
+Vendor: Select from existing vendors or click '+ Add New Vendor' (see section 7).
+Bill/Invoice Number: The number on the vendor's invoice.
+Bill Date: The date on the vendor's invoice.
+Due Date: The payment due date for the bill.
+Expense Category: Select an appropriate category (e.g., Office Supplies, Utilities, Software Subscription). This is vital for tax reporting. You can customize categories in Settings.
+Line Items (similar to Income Invoices): Description, Quantity, Unit Price.
+Total Amount: The total amount of the bill.
+Attachments (Recommended): Upload a scan or PDF of the original bill.
+Click 'Save Bill.'
+5.2. Viewing, Editing, and Marking Bills as Paid
+This functions similarly to managing income invoices. Navigate to 'Bills (Expenses),' select a bill to view/edit, and use the 'Mark as Paid' option when payment has been made.
+
+6. Managing Clients
+
+Keeping a list of your clients helps in quickly creating invoices.
+
+Navigate to 'Clients' from the left menu.
+Click '+ Add New Client.'
+Enter client details: Name, Contact Person, Email, Phone, Address, etc.
+Click 'Save Client.' You can edit or delete clients from the client list.
+7. Managing Vendors
+
+Similarly, managing vendors helps in recording bills efficiently.
+
+Navigate to 'Vendors' from the left menu.
+Click '+ Add New Vendor.'
+Enter vendor details: Name, Contact Information, etc.
+Click 'Save Vendor.'
+Page 3: Reporting and Support
+8. Generating Tax Reports
+
+TaxMeNothing simplifies your tax preparation by generating summary reports based on the data you've entered.
+
+8.1. Accessing Reports
+
+Navigate to 'Reports' from the left navigation menu.
+You will see a list of available reports.
+8.2. Types of Reports Available (Examples)
+
+Income Summary Report: Shows total income, broken down by client or by month, for a selected period.
+How to Generate: Select 'Income Summary,' choose the date range (e.g., Last Quarter, Last Financial Year), and click 'Generate Report.'
+Expense Summary Report: Shows total expenses, broken down by expense category or by month, for a selected period.
+How to Generate: Select 'Expense Summary,' choose the date range, and click 'Generate Report.'
+Profit & Loss Statement (Simplified): A basic overview of your income minus your expenses for a selected period.
+Tax Data Export (CSV/Excel): A detailed export of all relevant transactions (income and expenses with categories and dates) suitable for your accountant or for importing into tax software.
+8.3. Viewing and Exporting Reports
+
+Once generated, reports can be viewed directly within TaxMeNothing.
+[Image: TaxMeNothing Report View Placeholder]
+(Description: A sample report showing a table with dates, categories, and amounts, with options to 'Print' or 'Export.')
+Most reports offer export options, typically to PDF (for printing/archiving) and CSV/Excel (for further analysis or sharing with your accountant). Click the 'Export' button and choose your desired format.
+Important Note: TaxMeNothing reports are generated based on the data you input. Ensure your data entry is accurate and complete for reliable reports.
+
+9. Application Settings
+
+The 'Settings' section allows you to customize TaxMeNothing to your needs.
+
+Company Profile: (Covered in Page 1) Update business details, tax ID.
+Financial Settings: Set your financial year start date, default currency, default tax rates (if applicable to your invoicing).
+Invoice Customization: Configure invoice numbering (automatic or manual), add a logo to appear on future (though TaxMeNothing primarily focuses on data capture, not necessarily generating sendable invoices).
+Expense Categories: Add, edit, or delete expense categories to accurately classify your spending.
+Account Settings: Change your password, update your email address.
+Data Management:
+Backup: While TaxMeNothing performs regular cloud backups, you may find an option to manually export all your data periodically for peace of mind.
+Import Data: Options might be available to import existing data from CSV files (e.g., client lists, past invoices).
+10. Troubleshooting & FAQs
+
+Q: I forgot my password. A: On the login page, click the 'Forgot Password?' link and follow the instructions to reset it via email.
+Q: How do I correct an error on a saved invoice? A: Navigate to 'Invoices (Income),' find the invoice, click 'Edit,' make your corrections, and 'Save Invoice.'
+Q: Can I use TaxMeNothing for multiple businesses? A: Currently, each TaxMeNothing account is designed for a single business entity. You would need separate accounts for separate businesses.
+Q: Is my data secure? A: Yes, TaxMeNothing uses industry-standard security measures, including encryption for data in transit and at rest, and regular backups to protect your financial information.
+11. Getting Help & Support
+
+If you encounter issues or have questions not covered in this guide:
+
+Knowledge Base: Visit our online Help Center at help.taxmenothing-app.com (imaginary URL) for detailed articles and tutorials.
+Email Support: Contact our support team at support@taxmenothing-app.com. We aim to respond within 24-48 business hours.
+In-App Help: Look for a '?' icon or 'Help' link within the application for contextual assistance.

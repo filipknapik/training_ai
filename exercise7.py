@@ -8,5 +8,5 @@ while True:
     userEntry = input("> ")
     if userEntry.lower() == "exit":
         break
-    response = model.generate_content(userEntry)
+    response = model.generate_content(f"Respond to the following question in as rude way as you only can: {userEntry}")
     print(response.text)

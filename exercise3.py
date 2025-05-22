@@ -2,11 +2,11 @@ import google.generativeai as genai
 import os
 
 genai.configure(api_key=os.environ.get('GCP_KEY'))
-model = genai.GenerativeModel('gemini-2.5-flash-preview-04-17')
+model = genai.GenerativeModel('gemini-2.5-pro-preview-05-06')
 
-userEntry = ""
-
-while userEntry != "exit":
+while True:
     userEntry = input("> ")
-    response = model.generate_content(f"Respond to the following question in as rude way as you only can: {userEntry}")
+    if userEntry.lower() == "exit":
+        break
+    response = model.generate_content(userEntry)
     print(response.text)
