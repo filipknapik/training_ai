@@ -4,16 +4,22 @@ This is a quick workshop showcasing how to play with AI in Google Cloud Platform
 
 ### Installation Steps
 
-1.  **Download and install VS Code**  
+1.  **Upgrade Gcloud** 
+    If you don't have gcloud on your laptop today, install it from https://cloud.google.com/sdk/docs/install
+
+    If you have it, upgrade it to the latest version, running the following command from your terminal (command) window:
+    ```sh
+    gcloud components update
+    ```
+    (approve all changes)
+
+2.  **Download and install VS Code**  
     On your corporate laptop, install VS Code client.  
     Follow instructions from https://g3doc.corp.google.com/devtools/editors/vscode/g3doc/install.md?cl=head#macos
     (For MacOS you have a direct link; for Windows you need to go to https://code.visualstudio.com/)
 
-2.  **Add Gemini Code Assist plugin to VS Code**  
+3.  **Add Gemini Code Assist plugin to VS Code**  
     You will find it in the VS Code Marketplace (usually on the left sidebar).  
-
-3.  **Create a local folder**  
-    Create an `aiworkshop` folder in your `Documents` directory (or any preferred location).  
 
 4.  **Check Python version**  
     Go to your Terminal and check your `python3` version. Version 3.11 or newer is needed.  
@@ -25,44 +31,21 @@ This is a quick workshop showcasing how to play with AI in Google Cloud Platform
     python --version
     ```
 
-5.  **Create a virtual environment**  
-    While in the terminal window, navigate into the `aiworkshop` folder, then create and activate a virtual environment:  
-
-    **Mac/Linux:**  
-    ```sh
-    python3 -m venv venv
-    source venv/bin/activate
-    ```
-
-    **Windows:**  
-    ```sh
-    python -m venv venv
-    venv\Scripts\activate
-    ```
-
-6.  **Install Python dependencies**  
-    With your virtual environment activated, install the required Python packages from `requirements.txt`:  
-    ```sh
-    pip install -r requirements.txt
-    ```
-
-7.  **Open 'aiworkshop' folder in VS Code**  
-    In VS Code, use the "Open Folder" option to open the `aiworkshop` directory. Do not open individual files. Leave VS Code open.
-
-8.  **Prepare a new GCP project**  
+5.  **Prepare a new GCP project**  
     Pick a Google Cloud Platform project to use for this workshop. If you don't have one, get an experimental one. An empty, fresh project is ideal. Note down your Project ID.
 
-9.  **Enable Gemini API in Cloud Console**
-    Go to the Google Cloud Console, select the correct GCP project, search for "Gemini API" in the search bar, and ensure it's **Enabled**.
+6.  **Create a local folder**  
+    Create an `aiworkshop` folder in your `Documents` directory (or any preferred location).  
 
-10. **Create a Vertex AI API Key**  
-    In the Cloud Console, search for "Credentials". Click on "Create Credentials" and select "API Key".  
-    Once the key is created, **edit the API key** to restrict its usage. Under "API restrictions", select "Restrict key" and choose "Generative Language API" from the dropdown. Save the changes.  
-    Go back to your VS Code window and edit the `envvars.sh` file in your `aiworkshop` folder. Place the API key you just created into this file (e.g., `export API_KEY="YOUR_API_KEY_HERE"`) and save it.
-    **Remember to never share this file or your API key with anyone!**
-
-11. **Install Git**
+7. **Install Git**
     
+    Check if you have a git client installed by running the following command in a terminal window:
+    ```sh
+    git --version
+    ```
+
+    If you have it installed, move on to the next point. If it throws an error, install it using the instruction below.
+
     **Mac/Linux:**
     Refresh libraries:
     ```sh
@@ -80,7 +63,46 @@ This is a quick workshop showcasing how to play with AI in Google Cloud Platform
     git -v
     ```
 
+8. **Clone this repo**
     
+    While in the `aiworkshop` folder, clone this repo to it. 
+    ```sh
+    git clone https://github.com/filipknapik/training_ai.git
+    ```  
+
+9.  **Create a virtual environment**  
+    While in the terminal window, navigate into the `aiworkshop` folder, then create and activate a virtual environment:  
+
+    **Mac/Linux:**  
+    ```sh
+    python3 -m venv venv
+    source venv/bin/activate
+    ```
+
+    **Windows:**  
+    ```sh
+    python -m venv venv
+    venv\Scripts\activate
+    ```
+    All further python commands will need to be done in this session (window).
+
+10.  **Install Python dependencies**  
+    With your virtual environment activated, install the required Python packages from `requirements.txt`:  
+    ```sh
+    pip install -r requirements.txt
+    ```
+
+11.  **Open 'aiworkshop' folder in VS Code**  
+    In VS Code, use the "Open Folder" option to open the `aiworkshop` directory. Do not open individual files. Leave VS Code open.
+  
+12.  **Enable Gemini API in Cloud Console**
+    Go to the Google Cloud Console, select the correct GCP project, search for "Gemini API" in the search bar, and ensure it's **Enabled**.
+
+13. **Create a Vertex AI API Key**  
+    In the Cloud Console, search for "Credentials". Click on "Create Credentials" and select "API Key".  
+    Once the key is created, **edit the API key** to restrict its usage. Under "API restrictions", select "Restrict key" and choose "Generative Language API" from the dropdown. Save the changes.  
+    Go back to your VS Code window and edit the `envvars.sh` file in your `aiworkshop` folder. Place the API key you just created into this file (e.g., `export API_KEY="YOUR_API_KEY_HERE"`) and save it.
+    **Remember to never share this file or your API key with anyone!**
 
 ---
 *Installation complete*
