@@ -155,25 +155,6 @@ This is a quick workshop showcasing how to play with AI in Google Cloud Platform
 
 ## SESSION 2: Advanced Development Kit (ADK)  
 
-1.  **Install the Advanced Development Kit (ADK)**  
-    To use the ADK, you'll need to add it to your Python dependencies.  
-
-    a.  **Update `requirements.txt`:**  
-        Open your `requirements.txt` file in the `aiworkshop` folder and add the following line:  
-        ```text
-        google-adk
-        ```
-        *(Note: The original workshop material also mentioned an alternative for using a direct Git source, which was commented out. If instructed, you might use this instead:*
-        ```text
-        #git+https://github.com/google/adk-python.git@main
-        ```
-        *Ensure this line is commented out unless you specifically need to use it.)*
-
-    b.  **Install dependencies:**  
-        After saving `requirements.txt`, go to your terminal (with the virtual environment activated) and run:
-        ```sh
-        pip install -r requirements.txt
-        ```
 
 ## SESSION 3: Infrastructure with Terraform
 
