@@ -68,6 +68,7 @@ This is a quick workshop showcasing how to play with AI in Google Cloud Platform
     While in the `aiworkshop` folder, clone this repo to it. 
     ```sh
     git clone https://github.com/filipknapik/training_ai.git
+    cd training_ai
     ```  
 
 9.  **Create a virtual environment**  
