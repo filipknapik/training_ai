@@ -103,7 +103,11 @@ This is a quick workshop showcasing how to play with AI in Google Cloud Platform
 13. **Create a Vertex AI API Key**  
     In the Cloud Console, search for "Credentials". Click on "Create Credentials" and select "API Key".  
     Once the key is created, **edit the API key** to restrict its usage. Under "API restrictions", select "Restrict key" and choose "Generative Language API" from the dropdown. Save the changes.  
-    Go back to your VS Code window and edit the `envvars.sh` file in your `aiworkshop` folder. Place the API key you just created into this file (e.g., `export API_KEY="YOUR_API_KEY_HERE"`) and save it.
+
+14. **Create an env variable with the key**  
+    Go back to your VS Code window and create an `envvars.sh` file in the same folder where you have exercise files. Place the following line into this file:
+    `export GCP_KEY="YOUR_API_KEY_HERE"`
+    (replacing YOUR_API_KEY_HERE with your actual code from the previous step) and save it.
     **Remember to never share this file or your API key with anyone!**
 
 ---
@@ -124,18 +128,18 @@ This is a quick workshop showcasing how to play with AI in Google Cloud Platform
     ```
     Reinitialize with the GCP project ID you selected in Installation Step 8. Choose your corporate account when prompted. You can skip setting up a default Compute Engine zone if asked.
 
-3.  **Set default project for quota and billing**  
+3.  **Authenticate `gcloud` for application default credentials**  
+    Authenticate using this command:  
+    ```sh
+    gcloud auth application-default login
+    ```
+
+4.  **Set default project for quota and billing**  
     Set your project for application default credentials, which is used for quota checks and billing by some client libraries:  
     ```sh
     gcloud auth application-default set-quota-project YOUR_PROJECT_ID
     ```
     Replace `YOUR_PROJECT_ID` with your actual GCP Project ID.  
-
-4.  **Authenticate `gcloud` for application default credentials**  
-    Authenticate using this command:  
-    ```sh
-    gcloud auth application-default login
-    ```
 
 5.  **Run the first exercise - hardcoded question**  
     The first exercise will run a simple program that answers a question of "the capital of France".
