@@ -87,7 +87,9 @@ This is a quick workshop showcasing how to play with AI in Google Cloud Platform
     All further python commands will need to be done in this session (window).
 
 10.  **Install Python dependencies**  
-    With your virtual environment activated, install the required Python packages from `requirements.txt`:  
+    With your virtual environment activated, install the required Python packages from `requirements.txt`. Check the contents of the `requirements.txt` file to see what you are installing. 
+
+    **Mac/Linux or Windows:**  
     ```sh
     pip install -r requirements.txt
     ```
@@ -95,8 +97,8 @@ This is a quick workshop showcasing how to play with AI in Google Cloud Platform
 11.  **Open 'aiworkshop' folder in VS Code**  
     In VS Code, use the "Open Folder" option to open the `aiworkshop` directory. Do not open individual files. Leave VS Code open.
   
-12.  **Enable Gemini API in Cloud Console**  
-    Go to the Google Cloud Console, select the correct GCP project, search for "Gemini API" in the search bar, and ensure it's **Enabled**.
+12.  **Enable Gemini API and Vertex AI API in Cloud Console**  
+    Go to the Google Cloud Console, select the correct GCP project, search for "Gemini API" in the search bar, and ensure it's **Enabled**. Do the same for "Vertex AI API".
 
 13. **Create a Vertex AI API Key**  
     In the Cloud Console, search for "Credentials". Click on "Create Credentials" and select "API Key".  
