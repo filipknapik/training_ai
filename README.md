@@ -116,7 +116,7 @@ This is a quick workshop showcasing how to play with AI in Google Cloud Platform
 ---
 *Installation complete*
 
-### Running Your First Exercise
+### Running Exercises
 
 1.  **Load the API key into your terminal session**  
     In your terminal, within the `aiworkshop` folder (and with the virtual environment activated), run:  
@@ -235,6 +235,40 @@ This is a quick workshop showcasing how to play with AI in Google Cloud Platform
     ```
 
 ## SESSION 2: Advanced Development Kit (ADK)  
+
+1.  **Clone the repo again (potentially)**  
+    If you cloned the repo just now, you can skip this step. Otherwise, ensure you have the latest copy of this code including the ADK examples (added lately).  
+    Since you can't re-clone a repo to the same location, we'll need to do it again and do one file modification. 
+
+    Ensure you run the code from the aiworkshop folder!  
+    ```sh
+    cd aiworkshop
+    mkdir session2
+    cd session2
+    git clone https://github.com/filipknapik/training_ai.git
+    cd training_ai
+    mv adk1/model/.env_example adk1/model/.env
+    ```
+
+2.  **Open the session2 folde in VS Code**  
+    Since we are in a different folder now, we need to open a new folder in VS Code - open the session2 folder.
+
+3.  **Start ADK web server**  
+    First, ensure that in a terminal session you still see `(venv)` in front of your command prompt. If not, activate the virtual environment manually (see step 5 in the `Running Exercises` section).
+    
+    When confirmed, go to the `adk1` folder start an ADK web server:  
+    ```sh
+    adk web
+    ```
+
+4.  **Play with it**  
+    Open http://localhost:8000 in your browser.
+    
+    Ask the model the following questions (one by one):
+    - What's the temperature in New York?
+    - What's the time in New York?
+    - How much is 28*(15 - 3.1531) + 12.11?
+    - Who was the first president of the United States?
 
 
 ## SESSION 3: Infrastructure with Terraform
