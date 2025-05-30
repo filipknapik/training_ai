@@ -1,3 +1,5 @@
 envvars.sh
 venv/
 *.png
+adk/model1/.env
+.DS_Store
