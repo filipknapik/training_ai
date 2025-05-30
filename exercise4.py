@@ -8,7 +8,6 @@ while True:
     userEntry = input("> ")
     if userEntry.lower() == "exit":
         break
-    response = model.generate_content(
-        userEntry,
-        generation_config=genai.types.GenerationConfig(temperature=2))
+    response = model.generate_content(userEntry, generation_config=genai.types.GenerationConfig(temperature=2))
+    
     print(response.text)
