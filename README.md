@@ -87,7 +87,8 @@ This is a quick workshop showcasing how to play with AI in Google Cloud Platform
     All further python commands will need to be done in this session (window).
 
 10.  **Install Python dependencies**  
-    With your virtual environment activated, install the required Python packages from `requirements.txt`. Check the contents of the `requirements.txt` file to see what you are installing. 
+    With your virtual environment activated, install the required Python packages from `requirements.txt`
+    Check the contents of the `requirements.txt` file to see what you are installing. 
 
     **Mac/Linux or Windows:**  
     ```sh
@@ -105,8 +106,10 @@ This is a quick workshop showcasing how to play with AI in Google Cloud Platform
     Once the key is created, **edit the API key** to restrict its usage. Under "API restrictions", select "Restrict key" and choose "Generative Language API" from the dropdown. Save the changes.  
 
 14. **Create an env variable with the key**  
-    Go back to your VS Code window and create an `envvars.sh` file in the same folder where you have exercise files. Place the following line into this file:
-    `export GCP_KEY="YOUR_API_KEY_HERE"`
+    Go back to your VS Code window and create an `envvars.sh` file in the same folder where you have exercise files. Place the following line into this file:  
+    ```sh
+    export GCP_KEY="YOUR_API_KEY_HERE"`
+    ```  
     (replacing YOUR_API_KEY_HERE with your actual code from the previous step) and save it.
     **Remember to never share this file or your API key with anyone!**
 
@@ -141,7 +144,13 @@ This is a quick workshop showcasing how to play with AI in Google Cloud Platform
     ```
     Replace `YOUR_PROJECT_ID` with your actual GCP Project ID.  
 
-5.  **Run the first exercise - hardcoded question**  
+5.  **Activate the virtual environment**  
+    If you are NOT seeing (venv) in front of your command prompt, activate it manually:
+    ```sh
+    venv\Scripts\activate
+    ```
+
+6.  **Exercise 1 - hardcoded question**  
     The first exercise will run a simple program that answers a question of "the capital of France".
     Execute the first Python script:  
     ```sh
@@ -150,14 +159,80 @@ This is a quick workshop showcasing how to play with AI in Google Cloud Platform
 
     Now, open exercise1.py file and read it carefully. Ensure you understand every part of it, in case of question - ask!
 
-6.  **Run the second exercise - our first chat**  
-    The second exercise improves the program a bit and allows it to answer any question provided by a user. ".
-    Execute the first Python script:  
+7.  **Exercise 2 - our first chat**  
+    The second exercise improves the program a bit and allows it to answer any questions provided by a user. ".
+
     ```sh
-    python exercise1.py
+    python exercise2.py
     ```
 
     Now, open exercise2.py file and again ensure you understand it.
+    Try asking follow up questions (i.e. related to the model's previous answer or your prompt). You will see that the model remembers no context of the conversation.
+
+8.  **Exercise 3 - our first chat, now with a Pro model**  
+    The third exercise is identical to the third one - but uses a Pro model instead of Flash. Do you notice any differences? Go to the pricing model and notice price differences.  ".
+
+    ```sh
+    python exercise3.py
+    ```
+
+9.  **Exercise 4 - model configurations**  
+    Let's play with model's settings. This exercise shows an example of a model with adjusted temperature. Change the settings to other options and see how the model's behavior changes. Look up configurations and feel free to play with other settings.  
+
+    ```sh
+    python exercise4.py
+    ```
+
+10.  **Exercise 5 - output schema definition**  
+    What if you wanted to use LLM as a function in a program? You'd often need to enforce specific output conventions or formatting to make it useful for more deterministic parts of your application. This exercise shows how to define an output schema and enforce it on the model's response. 
+    NOTE: Ask the model only in a way that it can answer with a location (it has no checks / protections against unrelated questions - for code clarity). E.g. ask 'where's the statue of liberty?' or 'where is the capital of Poland?'.
+    This exercise will return a JSON with latitude and longitude of a location.  
+
+    ```sh
+    python exercise5.py
+    ```
+
+11.  **Exercise 6 - context injection into a prompt**  
+    How do we include additional information into a call to LLM, beyond what a user provided in their input?
+    This exercise shows how, at an application layer, to add additional information to LLM and connect user provided information with this additional input in a prompt.  
+
+    The model includes the contents of 'taxmenothing.txt' - a user guide for totally fake accounting application. Ask the model about features of this application etc. 
+
+    ```sh
+    python exercise6.py
+    ```
+
+12.  **Exercise 7 - context injection into a prompt**  
+    How to enforce a particular behaviour or a style to the model?
+    Some applications and models have system prompts that you can influence outside of the current prompt provided to it. If it's not there, you can always provide it as an instruction to the actual input. 
+
+    This is a very rude model, that will always answer in a very offensive way. Run at your own risk :P
+
+    ```sh
+    python exercise7.py
+    ```
+
+13.  **Exercise 8 - context injection into a prompt**  
+    Similar exercise to the previous one, just that now we will be talking to a model that speaks in a youth language. 
+
+    ```sh
+    python exercise8.py
+    ```
+
+14.  **Exercise 9 - Let's build a backend service for a translation app**  
+    Let's build an application that translates text from English to Polish and output the contents in a way that can be fed into another application component (e.g. UI).
+    Write any English sentences to this model. 
+
+    ```sh
+    python exercise9.py
+    ```
+
+15.  **Exercise 10 - Image generation**  
+    Let's generate an image from a text prompt. We will use both Positive and Negative prompts (Positive - what you want in the picture, Negative - what you DON'T want in the picture).
+
+    ```sh
+    python exercise10.py
+    ```
 
 ## SESSION 2: Advanced Development Kit (ADK)  
 
