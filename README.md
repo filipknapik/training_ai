@@ -147,7 +147,7 @@ This is a quick workshop showcasing how to play with AI in Google Cloud Platform
 5.  **Activate the virtual environment**  
     If you are NOT seeing (venv) in front of your command prompt, activate it manually:
     ```sh
-    venv\Scripts\activate
+    source venv/bin/activate
     ```
 
 6.  **Exercise 1 - hardcoded question**  
