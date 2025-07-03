@@ -287,19 +287,19 @@ This is a quick workshop showcasing how to play with AI in Google Cloud Platform
     ```
     Play with the new model and try understanding the code. 
 
-8.  **Start the API server**
+8.  **Start the API server**  
     Shut down the web server, if it's running. Then, start the API server:
     ```sh
     adk api_server
     ```
 
-9.  **Create a new session**
+9.  **Create a new session**  
     Shut down the web server, if it's running. Then, start the API server:
     ```sh
     curl -X POST http://localhost:8000/apps/model/users/johnsmith/sessions/s_123456 -H "Content-Type: application/json" 
     ```
 
-10.  **Interact with the model**
+10.  **Interact with the model**  
     Shut down the web server, if it's running. Then, start the API server:
     ```sh
     curl -X POST http://localhost:8000/run \
