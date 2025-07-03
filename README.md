@@ -234,7 +234,7 @@ This is a quick workshop showcasing how to play with AI in Google Cloud Platform
     python exercise10.py
     ```
 
-## SESSION 2: Advanced Development Kit (ADK)  
+## SESSION 2: Google Agent Development Kit (ADK)  
 
 1.  **Clone the repo again (potentially)**  
     If you cloned the repo just now, you can skip this step. Otherwise, ensure you have the latest copy of this code including the ADK examples (added lately).  
