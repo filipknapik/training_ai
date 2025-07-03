@@ -100,7 +100,7 @@ summarizationAgent = Agent(
 
 
 root_agent = Agent(
-    name="weather_time_agent",
+    name="root_agent",
     model="gemini-2.5-flash-preview-05-20",
     description=(
         "Agent to answer questions related to a summary of a web page, or to calculate some mathematical formula."

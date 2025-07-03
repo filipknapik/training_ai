@@ -250,18 +250,28 @@ This is a quick workshop showcasing how to play with AI in Google Cloud Platform
     mv adk1/model/.env_example adk1/model/.env
     ```
 
-2.  **Open the session2 folde in VS Code**  
+2.  **Edit the `.env` file**  
     Since we are in a different folder now, we need to open a new folder in VS Code - open the session2 folder.
 
-3.  **Start ADK web server**  
-    First, ensure that in a terminal session you still see `(venv)` in front of your command prompt. If not, activate the virtual environment manually (see step 5 in the `Running Exercises` section).
-    
-    When confirmed, go to the `adk1` folder start an ADK web server:  
+3. **Login to Google Cloud**
+    In the terminal window, run:
+    ```sh
+    gcloud auth application-default login
+    ```
+
+4. **Start the virtual environment (if not already active)**
+    In the main folder for this training, run:
+    ```sh
+    source venv/bin/activate
+    ``` 
+
+5.  **Start ADK web server**  
+    Go to the `adk1` folder start an ADK web server:  
     ```sh
     adk web
     ```
 
-4.  **Play with it**  
+6.  **Play with it**  
     Open http://localhost:8000 in your browser.
     
     Ask the model the following questions (one by one):
@@ -270,6 +280,43 @@ This is a quick workshop showcasing how to play with AI in Google Cloud Platform
     - How much is 28*(15 - 3.1531) + 12.11?
     - Who was the first president of the United States?
 
+7.  **Play with other examples (ADK2)**  
+    If ADK is still running, kill it (Ctrl+C). Go to the `adk2` folder start an ADK web server:  
+    ```sh
+    adk web
+    ```
+    Play with the new model and try understanding the code. 
+
+8.  **Start the API server**
+    Shut down the web server, if it's running. Then, start the API server:
+    ```sh
+    adk api_server
+    ```
+
+9.  **Create a new session**
+    Shut down the web server, if it's running. Then, start the API server:
+    ```sh
+    curl -X POST http://localhost:8000/apps/model/users/johnsmith/sessions/s_123456 -H "Content-Type: application/json" 
+    ```
+
+10.  **Interact with the model**
+    Shut down the web server, if it's running. Then, start the API server:
+    ```sh
+    curl -X POST http://localhost:8000/run \
+    -H "Content-Type: application/json" \
+    -d '{
+    "appName": "model",
+    "userId": "johnsmith",
+    "sessionId": "s_123456",
+    "newMessage": {
+        "role": "user",
+        "parts": [{
+        "text": "what is elevenlabs.io site about?"
+        }]
+    }
+    }'
+
+    ```
 
 ## SESSION 3: Infrastructure with Terraform
 
