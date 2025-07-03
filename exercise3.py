@@ -10,5 +10,4 @@ while True:
     if userEntry.lower() == "exit":
         break
     response = model.generate_content(userEntry)
-    pprint.pprint(response)
     print(response)

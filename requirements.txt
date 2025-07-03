@@ -1,3 +1,4 @@
 google-generativeai
 google-cloud-aiplatform
 google-adk
+html2text
