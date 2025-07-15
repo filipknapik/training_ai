@@ -1,5 +1,3 @@
-import datetime
-from zoneinfo import ZoneInfo
 from google.adk.agents import Agent, LlmAgent
 from google.adk.code_executors import BuiltInCodeExecutor
 import requests
@@ -106,7 +104,8 @@ root_agent = Agent(
         "Agent to answer questions related to a summary of a web page, or to calculate some mathematical formula."
     ),
     instruction=(
-        "You are a helpful agent that can calculate something or help to summarize contents of a web page. Decline to answer questions that are unrelated to time, weather or calculations."
-    ),
+        """You are a helpful agent that can calculate something or help to summarize contents of a web page. Decline to answer questions that are unrelated to these topics
+
+        """),
     sub_agents=[calculatorAgent, summarizationAgent]
 )

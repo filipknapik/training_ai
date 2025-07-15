@@ -339,8 +339,7 @@ This is a quick workshop showcasing how to play with AI in Google Cloud Platform
         ```sh
         terraform init
         ```
-    You might encounter an error message related to executable policies (e.g., Santa on macOS). If so, follow the provided link for resolution steps:
-    `https://upvote.googleplex.com/blockables/a451c0fbbb7cd5004e9aadf9ba6e2f5083a4530da99da1a460ee176ee9308c47`
+    You might encounter an error message related to executable policies (e.g., Santa on macOS). If so, follow the link with an error message for resolution:
     Copy the link to a browser, open it in Upvote, and upvote the policy. You may need to click on "G -> sync santa rules" to expedite the synchronization.
     Once done, try running `terraform init` (or `./terraform init`) again.
 

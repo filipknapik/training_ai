@@ -1,3 +1,6 @@
+curl -X POST http://localhost:8000/run -H "Content-Type: application/json" -d '{ "appName": "model", "userId": "johnsmith", "sessionId": "s_123456", "newMessage": { "role": "user", "parts": [{ "text": "what is elevenlabs.io site about?" }] } }' 
+
+
 import datetime
 from zoneinfo import ZoneInfo
 from google.adk.agents import Agent, SequentialAgent
@@ -55,6 +58,9 @@ translationAgent = Agent(
     As an input you are provided text to translate. Return only the translated text, no introduction.
     """,
 )
+
+
+
 
 safeguardAgent = Agent(
     name='safeguardAgent',
